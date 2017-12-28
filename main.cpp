@@ -1,4 +1,4 @@
-#include <algorithm>
+ï»¿#include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -103,7 +103,7 @@ int main(int argc, char* argv[]) {
 		ofs << '\n';
 	}
 
-	ofs << "\n^\nÈíäåêñ ïóòè\n\nÌàêñèìàëüíûé ïóòü: " << tri[0][0];
+	ofs << "\n^\nÐ˜Ð½Ð´ÐµÐºÑ Ð¿ÑƒÑ‚Ð¸\n\nÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð¿ÑƒÑ‚ÑŒ: " << tri[0][0];
 	ofs.close();
 	return 0;
 }

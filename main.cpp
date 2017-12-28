@@ -2,8 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <iomanip>
 #include <vector>
+#include <ctime>
 
 using namespace std;
 
@@ -31,10 +31,15 @@ string readFile(const char* path) {
 	return s;
 }
 
-size_t count(int i){
-	stringstream ss;
-	ss << i;
-	return ss.str().size();
+string getTime() {
+	time_t rawtime;
+	struct tm * timeinfo;
+	char buffer[80];
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+	strftime(buffer, sizeof(buffer), "%H%M%S", timeinfo);
+	string str(buffer);
+	return str;
 }
 
 int main(int argc, char* argv[]) {
@@ -85,7 +90,7 @@ int main(int argc, char* argv[]) {
 		lastI1++;
 	}
 
-	ofstream ofs("result.txt");
+	ofstream ofs("result" + getTime() + ".txt");
 	for (size_t i = 0; i < tri_s.size(); i++) ofs << "\t " << i;
 	ofs << '\n';
 	for (size_t i = 0; i < tri_s.size(); i++){
